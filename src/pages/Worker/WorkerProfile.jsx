@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import '../../styles/Worker/WorkerProfile.css';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const WorkerProfile = () => {
   const navigate = useNavigate();

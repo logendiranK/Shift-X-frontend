@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Flame } from 'lucide-react';
 import "../styles/MainPage/Home.css";
-
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ const Home = () => {
         const urgentJobsData = response.data
           .filter(job => job.jobType === "Urgent")
           .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
-          .slice(0, 4); 
+          .slice(0, 4);
         setUrgentJobs(urgentJobsData);
         setLoading(false);
       } catch (err) {

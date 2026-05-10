@@ -4,7 +4,7 @@ import '../styles/SearchJobs.css';
 import { Link } from 'react-router-dom';
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Search, MapPin, X } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 const SearchJobs = () => {
   const [urgentJobs, setUrgentJobs] = useState([]);
   const [partTimeJobs, setPartTimeJobs] = useState([]);

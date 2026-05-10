@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Briefcase, MapPin, Calendar, Clock, CheckCircle, XCircle, AlertCircle, ArrowLeft, IndianRupee, X } from 'lucide-react';
 import '../../styles/Worker/AppliedJobs.css';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const AppliedJobs = () => {
   const navigate = useNavigate();

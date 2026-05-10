@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import '../../styles/Emploer/EditJob.css';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const EditJob = () => {
   const { type, id } = useParams();

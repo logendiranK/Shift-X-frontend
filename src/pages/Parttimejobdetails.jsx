@@ -3,9 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { MapPin, Mail, Phone } from "lucide-react";
 import "../styles/Parttime/PartTimeJobDetails.css";
 import axios from "axios";
-
-const API_URL = import.meta.env.VITE_API_URL;
-
+const API_URL = "https://shift-x-backend.onrender.com";
 const PartTimeJobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();

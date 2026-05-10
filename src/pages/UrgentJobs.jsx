@@ -4,7 +4,7 @@ import axios from 'axios';
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Search, MapPin, X, Flame } from 'lucide-react';
 import '../styles/Urgent/UrgentJobs.css';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const UrgentJobs = () => {
     const [urgentJobs, setUrgentJobs] = useState([]);

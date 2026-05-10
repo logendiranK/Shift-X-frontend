@@ -4,7 +4,7 @@ import { Flame, MapPin, Mail, Phone } from "lucide-react";
 import "../styles/Parttime/PartTimeJobDetails.css";
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://shift-x-backend.onrender.com";
 
 const UrgentJobDetails = () => {
   const { id } = useParams();
