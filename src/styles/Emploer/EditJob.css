@@ -1,0 +1,62 @@
+.edit-job-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-job-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+
+.edit-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-job-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.edit-job-form input,
+.edit-job-form textarea,
+.edit-job-form select {
+  margin-top: 5px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-job-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.save-btn {
+  margin-top: 10px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: #2563eb;
+}

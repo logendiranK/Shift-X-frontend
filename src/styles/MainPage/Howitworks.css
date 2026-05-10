@@ -1,0 +1,282 @@
+/* --- Core Variables and Base --- */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #10b981;
+  --secondary-hover: #059669;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.howitworks-page {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--gray-900);
+  background-color: white;
+  min-height: calc(100vh - 80px);
+}
+
+/* --- Hero Section --- */
+.hiw-hero {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.hiw-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiw-hero-content .badge {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hiw-hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hiw-hero .subtitle {
+  font-size: 18px;
+  color: var(--gray-700);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Main Content Section --- */
+.hiw-main {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Toggle Buttons */
+.hiw-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hiw-toggle {
+  display: flex;
+  background-color: var(--gray-100);
+  padding: 6px;
+  border-radius: 30px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: white;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.toggle-btn:hover:not(.active) {
+  color: var(--gray-900);
+}
+
+/* Steps Container */
+.hiw-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Step Card */
+.hiw-step-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-100);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 30px;
+  z-index: 2;
+}
+
+.hiw-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background-color: var(--primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  border: 4px solid white;
+}
+
+.step-icon-wrapper {
+  background-color: #eef2ff;
+  color: var(--primary);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex-grow: 1;
+}
+
+.step-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--gray-900);
+}
+
+.step-content p {
+  font-size: 16px;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- CTA Section --- */
+.hiw-cta {
+  padding: 60px 20px 80px;
+}
+
+.hiw-cta-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--gray-900) 0%, #1f2937 100%);
+  border-radius: 24px;
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.hiw-cta-card h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hiw-cta-card p {
+  font-size: 18px;
+  color: var(--gray-300);
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hiw-cta-card button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--gray-900);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gray-100);
+  transform: translateY(-2px);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .hiw-hero h1 {
+    font-size: 36px;
+  }
+  
+  .hiw-step-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .step-number {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+  }
+  
+  .hiw-cta-card h2 {
+    font-size: 28px;
+  }
+}
