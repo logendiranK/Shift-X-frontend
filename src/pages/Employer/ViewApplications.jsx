@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import '../../styles/Emploer/ViewApplications.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ViewApplications = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const ViewApplications = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/applications/job/${id}`);
+        const res = await axios.get(`${API_URL}/api/applications/job/${id}`);
         setApplications(res.data);
       } catch (err) {
         setError('Failed to fetch applications.');
@@ -27,7 +29,7 @@ const ViewApplications = () => {
 
   const handleStatusUpdate = async (appId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/applications/${appId}/status`, { status: newStatus });
+      await axios.put(`${API_URL}/api/applications/${appId}/status`, { status: newStatus });
       setApplications(applications.map(app => 
         app._id === appId ? { ...app, status: newStatus } : app
       ));

@@ -3,6 +3,8 @@ import axios from "axios";
 import { AlertTriangle, Rocket } from "lucide-react";
 import "../../styles/Urgent/UrgentJobForm.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const UrgentJobForm = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -50,7 +52,7 @@ const UrgentJobForm = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/api/urgentjobs",
+        `${API_URL}/api/urgentjobs`,
         jobData
       );
       setMessage("Urgent job posted successfully!");

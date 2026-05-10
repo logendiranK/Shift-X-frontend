@@ -3,6 +3,8 @@ import axios from "axios";
 import { Clock, Send } from "lucide-react";
 import "../../styles/Parttime/PartTimeJobForm.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const PartTimeJobForm = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -46,7 +48,7 @@ const PartTimeJobForm = () => {
         requirements: formData.requirements.split(",").map((req) => req.trim()),
       };
 
-      await axios.post("http://localhost:5000/api/part-time-jobs", jobData);
+      await axios.post(`${API_URL}/api/part-time-jobs`, jobData);
       setMessage("Part-time job posted successfully!");
       setFormData({
         title: "",

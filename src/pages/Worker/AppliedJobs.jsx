@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Briefcase, MapPin, Calendar, Clock, CheckCircle, XCircle, AlertCircle, ArrowLeft, IndianRupee, X } from 'lucide-react';
 import '../../styles/Worker/AppliedJobs.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AppliedJobs = () => {
   const navigate = useNavigate();
   const [applications, setApplications] = useState([]);
@@ -22,7 +24,7 @@ const AppliedJobs = () => {
 
   const fetchApplications = async (workerId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/applications/worker/${workerId}`);
+      const response = await axios.get(`${API_URL}/api/applications/worker/${workerId}`);
       setApplications(response.data);
       setLoading(false);
     } catch (err) {

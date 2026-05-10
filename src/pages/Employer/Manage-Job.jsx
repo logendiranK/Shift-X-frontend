@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Emploer/ManageJobs.css'
+
+const API_URL = import.meta.env.VITE_API_URL;
 const ManageJob = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,8 +22,8 @@ const ManageJob = () => {
     const fetchJobs = async () => {
       try {
         const [partTimeRes, urgentRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/part-time-jobs/employer/${employerId}`),
-          axios.get(`http://localhost:5000/api/urgentjobs/employer/${employerId}`)
+          axios.get(`${API_URL}/api/part-time-jobs/employer/${employerId}`),
+          axios.get(`${API_URL}/api/urgentjobs/employer/${employerId}`)
         ]);
 
         const partTimeJobs = partTimeRes.data.map(job => ({ ...job, displayType: 'Part-Time' }));
@@ -47,7 +49,7 @@ const ManageJob = () => {
 
   const handleClosePartTimeJob = async (jobId) => {
     try {
-      await axios.put(`http://localhost:5000/api/part-time-jobs/${jobId}`, { status: 'Closed' });
+      await axios.put(`${API_URL}/api/part-time-jobs/${jobId}`, { status: 'Closed' });
       setJobs(jobs.map(job => job._id === jobId ? { ...job, status: 'Closed' } : job));
     } catch (err) {
       alert('Failed to close job');

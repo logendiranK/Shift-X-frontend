@@ -3,6 +3,8 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/MainPage/Login.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,8 +34,8 @@ const Login = () => {
     e.preventDefault();
     const endpoint =
       role === 'worker'
-        ? 'http://localhost:5000/api/auth/login-worker'
-        : 'http://localhost:5000/api/auth/login-employer';
+        ? `${API_URL}/api/auth/login-worker`
+        : `${API_URL}/api/auth/login-employer`;
 
     try {
       const response = await axios.post(endpoint, formData);

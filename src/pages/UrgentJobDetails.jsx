@@ -4,6 +4,8 @@ import { Flame, MapPin, Mail, Phone } from "lucide-react";
 import "../styles/Parttime/PartTimeJobDetails.css";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const UrgentJobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const UrgentJobDetails = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/urgentjobs/${id}`);
+        const response = await axios.get(`${API_URL}/api/urgentjobs/${id}`);
         setJob(response.data);
       } catch {
         setError("Failed to fetch urgent job details.");
@@ -36,7 +38,7 @@ const UrgentJobDetails = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/applications', {
+      await axios.post(`${API_URL}/api/applications`, {
         jobId: job._id,
         jobType: 'Urgent',
         workerId: workerId,

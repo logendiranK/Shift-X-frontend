@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import "../../styles/Worker/WorkerSignup.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SignupWorker = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -24,7 +26,7 @@ const SignupWorker = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup-worker', formData);
+      const response = await axios.post(`${API_URL}/api/auth/signup-worker`, formData);
       console.log('Signup success:', response.data);
       
       

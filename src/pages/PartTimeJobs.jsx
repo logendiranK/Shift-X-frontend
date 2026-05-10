@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Search, MapPin, X } from 'lucide-react';
 import "../styles/Parttime/PartTimeJobs.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const PartTimeJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +21,7 @@ const PartTimeJobs = () => {
   const fetchJobs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/part-time-jobs"
+        `${API_URL}/api/part-time-jobs`
       );
       setJobs(response.data);
       setLoading(false);

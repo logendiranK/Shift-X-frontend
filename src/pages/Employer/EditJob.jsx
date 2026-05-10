@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import '../../styles/Emploer/EditJob.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const EditJob = () => {
   const { type, id } = useParams();
   const navigate = useNavigate();
@@ -15,8 +17,8 @@ const EditJob = () => {
     const fetchJob = async () => {
       try {
         const endpoint = type.toLowerCase() === 'urgent' 
-          ? `http://localhost:5000/api/urgentjobs/${id}`
-          : `http://localhost:5000/api/part-time-jobs/${id}`;
+          ? `${API_URL}/api/urgentjobs/${id}`
+          : `${API_URL}/api/part-time-jobs/${id}`;
         
         const res = await axios.get(endpoint);
         const data = res.data;
@@ -43,8 +45,8 @@ const EditJob = () => {
     e.preventDefault();
     try {
       const endpoint = type.toLowerCase() === 'urgent' 
-        ? `http://localhost:5000/api/urgentjobs/${id}`
-        : `http://localhost:5000/api/part-time-jobs/${id}`;
+        ? `${API_URL}/api/urgentjobs/${id}`
+        : `${API_URL}/api/part-time-jobs/${id}`;
 
       const payload = { ...formData };
       if (typeof payload.requirements === 'string') {

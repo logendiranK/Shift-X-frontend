@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../styles/SearchJobs.css';
 import { Link } from 'react-router-dom';
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Search, MapPin, X } from 'lucide-react';
+
+const API_URL = import.meta.env.VITE_API_URL;
 const SearchJobs = () => {
   const [urgentJobs, setUrgentJobs] = useState([]);
   const [partTimeJobs, setPartTimeJobs] = useState([]);
@@ -23,8 +25,8 @@ const SearchJobs = () => {
     setLoading(true);
     try {
       const [urgentRes, partTimeRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/urgentjobs'),
-        axios.get('http://localhost:5000/api/part-time-jobs'),
+        axios.get(`${API_URL}/api/urgentjobs`),
+        axios.get(`${API_URL}/api/part-time-jobs`),
       ]);
       setUrgentJobs(urgentRes.data);
       setPartTimeJobs(partTimeRes.data);

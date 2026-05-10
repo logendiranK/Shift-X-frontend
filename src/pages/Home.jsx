@@ -4,6 +4,8 @@ import axios from "axios";
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Flame } from 'lucide-react';
 import "../styles/MainPage/Home.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Home = () => {
   const navigate = useNavigate();
   const [urgentJobs, setUrgentJobs] = useState([]);
@@ -13,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUrgentJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/urgentjobs");
+        const response = await axios.get(`${API_URL}/api/urgentjobs`);
         const urgentJobsData = response.data
           .filter(job => job.jobType === "Urgent")
           .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))

@@ -4,6 +4,8 @@ import { MapPin, Mail, Phone } from "lucide-react";
 import "../styles/Parttime/PartTimeJobDetails.css";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const PartTimeJobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ const PartTimeJobDetails = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/part-time-jobs/${id}`);
+        const response = await axios.get(`${API_URL}/api/part-time-jobs/${id}`);
         setJob(response.data);
       } catch {
         setError("Failed to fetch job details.");
@@ -36,7 +38,7 @@ const PartTimeJobDetails = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/applications', {
+      await axios.post(`${API_URL}/api/applications`, {
         jobId: job._id,
         jobType: 'Part-Time',
         workerId: workerId,

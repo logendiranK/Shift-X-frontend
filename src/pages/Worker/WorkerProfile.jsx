@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import '../../styles/Worker/WorkerProfile.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const WorkerProfile = () => {
   const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
@@ -55,7 +57,7 @@ const WorkerProfile = () => {
 
   const fetchWorkerProfile = async (workerId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/workers/${workerId}`);
+      const response = await axios.get(`${API_URL}/api/workers/${workerId}`);
       const worker = response.data;
       
       const parsedData = {
@@ -115,7 +117,7 @@ const WorkerProfile = () => {
       }
       
       const response = await axios.put(
-        `http://localhost:5000/api/workers/${workerId}`,
+        `${API_URL}/api/workers/${workerId}`,
         form,
         { headers: { 'Content-Type': 'multipart/form-data' } }
       );
