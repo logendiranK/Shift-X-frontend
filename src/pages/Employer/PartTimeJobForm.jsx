@@ -3,7 +3,7 @@ import axios from "axios";
 import { Clock, Send } from "lucide-react";
 import "../../styles/Parttime/PartTimeJobForm.css";
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const PartTimeJobForm = () => {
   const [formData, setFormData] = useState({

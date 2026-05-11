@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Emploer/ManageJobs.css'
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 const ManageJob = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);

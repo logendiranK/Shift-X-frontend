@@ -3,7 +3,7 @@ import { useLocation, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/MainPage/Login.css';
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const Login = () => {
   const location = useLocation();

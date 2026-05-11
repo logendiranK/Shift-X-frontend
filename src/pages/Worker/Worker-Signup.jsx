@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import "../../styles/Worker/WorkerSignup.css";
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const SignupWorker = () => {
   const navigate = useNavigate();

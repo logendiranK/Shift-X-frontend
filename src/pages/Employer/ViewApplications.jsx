@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import '../../styles/Emploer/ViewApplications.css';
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const ViewApplications = () => {
   const { id } = useParams();

@@ -3,7 +3,7 @@ import axios from "axios";
 import { AlertTriangle, Rocket } from "lucide-react";
 import "../../styles/Urgent/UrgentJobForm.css";
 
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const UrgentJobForm = () => {
   const [formData, setFormData] = useState({

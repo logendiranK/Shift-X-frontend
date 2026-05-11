@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Flame } from 'lucide-react';
 import "../styles/MainPage/Home.css";
-const API_URL = "https://shift-x-backend.onrender.com";
+const API_URL = "https://shift-x-2.onrender.com";
 
 const Home = () => {
   const navigate = useNavigate();
