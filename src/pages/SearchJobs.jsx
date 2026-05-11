@@ -3,8 +3,7 @@ import axios from 'axios';
 import '../styles/SearchJobs.css';
 import { Link } from 'react-router-dom';
 import { ChefHat, Truck, Zap, Brush, Wrench, Car, Briefcase, Search, MapPin, X } from 'lucide-react';
-
-const API_URL = "https://shift-x-2.onrender.com";
+import { API_URL } from '../config/api.js';
 const SearchJobs = () => {
   const [urgentJobs, setUrgentJobs] = useState([]);
   const [partTimeJobs, setPartTimeJobs] = useState([]);
